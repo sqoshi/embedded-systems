@@ -1,0 +1,72 @@
+\date{\today}
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\begin{document}
+\section{Dane}
+\subsection{Czym są dane wejściowe i wyjściowe systemu?}
+\subsubsection{Dane Wejściowe}
+Bezpośrednio: Dane wejściowe to kulki występujące w różnych kolorach o podobnej średnicy( Nie mogą być większe niż średnica kanału wprowadzający je do maszyny). Częstotliwość zmiany jest zależna od ilości kul w każdym kolorze oraz od samej ilości kombinacji rozróżniania kolorów RGB zaimplementowanej w kodzie. Natomiast pośrednio głównymi danymi, na których opiera się dalsze działanie jest kolor danej kuli. Dokładniej kombinacja zbadanych częstotliowści kolorów czerwony, niebieski, zielony wyłapywanych przez sensor TCS3200. Np jeśli sensor zdobył informację o częstotliwości Green= 23  i częstotliwości Blue= 21 to możemy uznąć kulkę za pomarańczową. Zakres kolorów i kombinacji kolorów jest tak głęboki jak możliwości sensora.
+\subsubsection{Dane Wyjściowe}
+Bezpośrednio: Danymi wyjściowymi są rozłączne zbiory kulek posortowane, rozdzielone pod względem kolorów, częstotliwości RGB. Natomiast pośrednio jest nim kąt pod jakim system ma ustawić zsuw przez serwo tak, aby kula wpadła do odpowiedniego kontenera.
+\subsection{Sposób (algorytm) na przetwarzanie wejść na wyjścia.}
+\subsubsection{Słownie}
+Wprowadzony zostaje obiekt- kula.\\
+Kula jest przesuwana pod sensor, gdzie badana jest pod względem gęstości kolorów red, green, blue.\\
+Dla otrzymanego koloru zostaje wyznaczony odpowiedni kąt, w którym pochylnia jest ustawiana.\\
+Obiekt zostaje zwolniony i toczy się po zsuwie do odpowiedniego zbiornika.\\
+Reset do standardowych pozycji.\\
+Powtórz dopóty jest zasilanie i wpadł nowy obiekt na wejście.\\
+\subsubsection{Pseudokod}
+
+$loop()\{\\$
+$moveSerwo1Degrees(X)\\
+color = detectColor()\\
+decision = chooseContainer(color)\\
+moveSerwo2(decision)\\
+pushObject()\\
+moveSerwo1Degrees(-X)\\$
+$\}\\$
+
+$detectColor()\{\\$
+$//sprawdzamy czerwone\\
+digitalWrite(X, LOW);\\
+digitalWrite(X, LOW);\\
+R = pulseIn(sensor,LOW);\\
+//sprawdzamy zielone\\
+digitalWrite(X, LOW);\\
+digitalWrite(X, HIGH);\\
+G = pulseIn(sensor,LOW);\\
+//sprawdzamy niebieskie\\
+digitalWrite(X, HIGH);\\
+digitalWrite(X, HIGH);\\
+B = pulseIn(sensor,LOW);\\
+color = colorCombinations(R,G,B);\\
+return$ $ color;\\$
+$\}\\$
+
+$colorCombinations(R,G,B)\{\\$
+$if(R> 24 and R < 38 and G> 30 and G<44)\{\\
+color = 1$ $ // yellow \\
+\}\\
+if(B> 22 and B < 19 and G> 22 and G<25)\{\\
+color = 2 $ $// orange \\
+\}\\
+.\\
+.\\
+.\\
+return$  $color;\\$
+$\}\\$
+
+$chooseContainer(color)\{\\$
+$if(color == 1)\{\\
+serwo.write(X);\\
+\}\\
+if(color == 2)\{\\
+serwo.write(X);\\
+\}\\$
+.\\
+.\\
+.\\
+$\}\\$
+\end{document}

@@ -20,7 +20,7 @@
 Operator uruchamia system, uzyskuje możliwość pracy na urządzeniu.\\
 System uzyskuje dostęp do energii( zasilania), dzięki czemu może wykonywać działania.
 \paragraph{Opis:}\mbox{} \\
-System jest uruchamiany przez operatora dostępnym przyciskiem $ON/OFF.$
+System jest uruchamiany przez operatora dostępnym przyciskiem $ON/OFF$, który daje dostęp do zasilania dla systemu.
 
 \subsubsection{Wprowadzenie Danych}
 \paragraph{Przypadek Użycia:}\mbox{Nr 2}
@@ -29,7 +29,7 @@ System jest uruchamiany przez operatora dostępnym przyciskiem $ON/OFF.$
 Operator wprowadza obiekt na wejście.\\
 System otrzymuje dane niezbędne do rozpoczęcia działania.
 \paragraph{Opis:}\mbox{} \\
-Operator wprowadza obiekty do zbiornika, który będzie selekcjonowany. Jeden z obiektów wchodzi na główne wejście.
+Operator wprowadza element na wejście urządzenia. Obiekt Wpada na serwo Nr 1.
 
 \subsubsection{Przekazanie obiektu do analizy}
 \paragraph{Przypadek Użycia:}\mbox{Nr 3}
@@ -37,7 +37,7 @@ Operator wprowadza obiekty do zbiornika, który będzie selekcjonowany. Jeden z 
 \paragraph{Aktorzy:}\mbox{} \\
 System przenosi obiekt do miejsca, w którym zostanie on przeanalizowany.
 \paragraph{Opis:}\mbox{} \\
-System sam przekazuje przez serwo dane z wejścia pod sensor, gdzie zostanie przebadany.
+System przekazuje przez serwo nr 1 dane z wejścia pod color sensor TCS3200, gdzie obiekt zostanie przebadany.
 
 \subsubsection{Analiza Obiektu}
 \paragraph{Przypadek Użycia:}\mbox{Nr 4}
@@ -45,7 +45,7 @@ System sam przekazuje przez serwo dane z wejścia pod sensor, gdzie zostanie prz
 \paragraph{Aktorzy:}\mbox{} \\
 System analizuje obiekt podany z wejścia. System otrzymuje informacje o obiekcie na podstawie, których może ustalić kolejne działania.
 \paragraph{Opis:}\mbox{} \\
-System analizuje obiekt w oparciu o sensor i określa jego kolor na podstawie określonych w implementacji zasad.
+Obiekt znajduję się przy sensorze. Zostaje przebadany pod względem koloru. System zbiera informacje na temat częstotliwości RGB i określa kolor na podstawie zaimplementowanych zasad.
 
 \subsubsection{Ustawienie Zsuwu}
 \paragraph{Przypadek Użycia:}\mbox{Nr 5}
@@ -53,7 +53,7 @@ System analizuje obiekt w oparciu o sensor i określa jego kolor na podstawie ok
 \paragraph{Aktorzy:}\mbox{} \\
 System na podstawie posiadanych informacji ustawa zsuw w odpowiednim kącie.
 \paragraph{Opis:}\mbox{} \\
-System w zależności od uzyskanych danych ustala odpowiednią dla danych ścieżkę, po której ma zostać dalej przekazany obiekt do określonego miejsca.
+System na podstawie zebranych informacji ustawia zsuw wykorzystując serwo nr 2. Pochylnia ustawiona jest pod takim kątem, aby wpaść do odpowiedniego kontenera.
 
 \subsubsection{Zwolnienie obiektu}
 \paragraph{Przypadek Użycia:}\mbox{Nr 6}
@@ -62,7 +62,10 @@ System w zależności od uzyskanych danych ustala odpowiednią dla danych ście�
 System przenosi obiekt do zsuwu. 
 Operator uzyskuje uporządkowany obiekt w oczekiwanym miejscu.
 \paragraph{Opis:}\mbox{} \\
-System przekazuje przez serwo obiekt nad poprawnie ustawiony zsuw, przy czym zwalnia obiekt do odpowiedniego kontenera. Po czym wraca do odpowiedniej pozycji oczekiwania na kolejny obiekt.
+System przekazuje przez serwo nr 1 obiekt nad poprawnie ustawiony zsuw, przez  co zwalnia obiekt,a ten toczy się do odpowiedniego kontenera. Po czym serwo nr 1 wraca do początkowej pozycji, a system oczekuje na kolejny obiekt.
+\subsection{Ekstremalne Przypadki Użycia}
+Modyfikacja urządzenia o kolejkowanie zbioru wejściowego.
+
 
 
 
