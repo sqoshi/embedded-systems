@@ -1,0 +1,80 @@
+\documentclass[12pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=C++,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+\begin{document}
+\section{Polecenia}
+Załóżmy, że autko "dorobiło się" możliwości patrzenia. Ma więc teraz całkiem sporo możliwości poruszania się.  Pora to wykorzystać. Wykonaj jedno z poniższych zadań (niektóre są łatwiejsze, inne - ciekawsze). Budując algorytm realizujący któreś z nich, polegaj na dostępnych systemach: zliczaniu obrotów kół i radarze sonicznym. Jak zwykle, pisz w pseudokodzie z sensownie opisanymi metodami tak, żeby było wiadomo, co która robi.
+\subsubsection{}Zaimplementuj mechanizm płynnego omijania przeszkody. Autko, napotkawszy na swojej drodze przeszkodę (np. plecak), powinno spróbować ją ominąć bez zatrzymania się, tj. nie wykonując operacji "stop-skręć w miejscu-jedź". Po ominięciu przeszkody pojazd powinien kontynuować jazdę w mniej więcej tym samym kierunku, jak przed rozpoczęciem omijania. Wskazówka: pomyśl, jak osoba niewidoma omijałaby przeszkodę korzystając z laski. Możesz w ten sposób wykorzystać obracający się na serwomotorze sonar jako "próbnik".
+\subsubsection{}Przypomnij sobie, jak wygląda korytarz w sali 317. "Wyprowadź" autko na samodzielny spacer: "ustaw" je przed wyjściem z sali 317.2 w kierunku korytarza. Auto powinno po wyjechaniu z sali skręcić w lewo i jechać w kierunku serwerowni. Po dotarciu do końca korytarza auto powinno skręcając w prawo podjechać do ściany z oknami i ponownie skręcić w prawo. Następnie powinno jechać tak długo, aby móc skręcić i wrócić do sali 317.2. Po przejechaniu progu powinno się zatrzymać. (UWAGA! Autko nie powinno pojechać za daleko w kierunku wyjścia z na klatkę schodową!)
+\subsubsection{}Zaprojektuj model sprężyny, wykorzystując prawo Hooke'a. Model działania możesz obejrzeć tutaj. Auto jest masą. Zamiast rozciągnięcia/ściśnięcia sprężyny użyj odległości autka od przeszkody. Sprężyna jest "twarda" - nie oscyluje.\\
+Działanie, którego na razie nie sprawdzisz (ale pewnie kiedyś się uda) powinno być takie: autko ma podjechać do ruchomej przeszkody i powoli się przed nią zatrzymać w odległości ok 100 cm (moment zerowej energii). Zbliżając się, ma kontrolować względny ruch przeszkody i odpowiednio przyspieszać (gonić ją) jeśli przeszkoda się oddala, lub zwalniać (zawracać!), jeśli się przybliża. Po zatrzymaniu się przed przeszkodą, ma utrzymywać od niej stałą odległość tak, aby zawsze znajdować się w punkcie "minimum energii".
+
+\section{Rozwiązanie}
+\begin{lstlisting}
+void z2{
+	%Deklaracja zmiennych
+	distance=0;
+	wheelCounter=0;
+	turnLeftDegrees(90);
+	%zliczanie obrotow
+	attachPCINT(digitalPinTOPCINT(INTINPUT0),increment,RISING);
+	goForward();
+	%dopoki droga jest czysta to jedz
+	while(lookDegrees(0)>1){
+		continueWay();
+	}
+	%sciana, skret + zapisz dystans
+	stop();
+	distance = wheelCounter;
+	turnRight();
+	goForward();
+	while(lookDegrees(0)>1){
+		continueWay();
+	}
+	%okna, skret + reset counter
+	stop();
+	wheelCounter=0;
+	turnRight();
+	goForward();
+	while(distance<wheelCounter){
+		continueWay();
+	}
+	stop();
+	turnRight();
+	goForward();
+	%witryna drzwi, zatrzymaj sie w progu
+	while(lookRightDegrees(90)<70){
+		continueWay();
+	}
+	stop();
+	void increment() {
+		if(digitalRead(INTINPUT0))
+		wheelCounter++;
+		}
+}
+\end{lstlisting}
+\end{document}

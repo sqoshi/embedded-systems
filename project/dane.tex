@@ -1,4 +1,4 @@
-\date{\today}
+
 \documentclass[12pt]{article}
 \usepackage{graphicx}
 \usepackage[T1]{fontenc}
@@ -6,9 +6,9 @@
 \section{Dane}
 \subsection{Czym są dane wejściowe i wyjściowe systemu?}
 \subsubsection{Dane Wejściowe}
-Bezpośrednio: Dane wejściowe to kulki występujące w różnych kolorach o podobnej średnicy( Nie mogą być większe niż średnica kanału wprowadzający je do maszyny). Częstotliwość zmiany jest zależna od ilości kul w każdym kolorze oraz od samej ilości kombinacji rozróżniania kolorów RGB zaimplementowanej w kodzie. Natomiast pośrednio głównymi danymi, na których opiera się dalsze działanie jest kolor danej kuli. Dokładniej kombinacja zbadanych częstotliowści kolorów czerwony, niebieski, zielony wyłapywanych przez sensor TCS3200. Np jeśli sensor zdobył informację o częstotliwości Green= 23  i częstotliwości Blue= 21 to możemy uznąć kulkę za pomarańczową. Zakres kolorów i kombinacji kolorów jest tak głęboki jak możliwości sensora.
+Bezpośrednio: Dane wejściowe to kulki występujące w różnych kolorach o podobnej średnicy( Nie mogą być większe niż średnica kanału wprowadzający je do maszyny). Częstotliwość zmiany jest zależna od ilości kul w każdym kolorze oraz od samej ilości kombinacji rozróżniania kolorów RGB zaimplementowanej w kodzie. Natomiast pośrednio głównymi danymi, na których opiera się dalsze działanie jest kolor danej kuli. Dokładniej kombinacja zbadanych częstotliowści (int) kolorów czerwony, niebieski, zielony wyłapywanych przez sensor. Np jeśli sensor zdobył informację o częstotliwości Green= 23  i częstotliwości Blue= 21 to możemy uznąć kulkę za pomarańczową. Zakres kolorów i kombinacji kolorów jest tak głęboki jak możliwości sensora.
 \subsubsection{Dane Wyjściowe}
-Bezpośrednio: Danymi wyjściowymi są rozłączne zbiory kulek posortowane, rozdzielone pod względem kolorów, częstotliwości RGB. Natomiast pośrednio jest nim kąt pod jakim system ma ustawić zsuw przez serwo tak, aby kula wpadła do odpowiedniego kontenera.
+Bezpośrednio: Danymi wyjściowymi są rozłączne zbiory kulek posortowane, rozdzielone pod względem kolorów- częstotliwości RGB. Natomiast pośrednio jest nim kąt (int) pod jakim system ma ustawić zsuw przez serwo tak, aby kula wpadła do odpowiedniego kontenera.
 \subsection{Sposób (algorytm) na przetwarzanie wejść na wyjścia.}
 \subsubsection{Słownie}
 Wprowadzony zostaje obiekt- kula.\\
