@@ -1,0 +1,81 @@
+
+\documentclass[12pt]{article}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\begin{document}
+\section{Dane}
+\subsection{Czym są dane wejściowe i wyjściowe systemu?}
+\subsubsection{Dane Wejściowe}
+Dane wejściowe to trójka natężeń podstawowych kolorów czerwony, zielony, niebieski( R, G, B). Są zależne od obiektu zbadanego przez sensor, z którego pochodzą. Na podstawie tych właśnie natężeń jest określony kolor, (kąt) który jest przekazany na serwo dolne.
+\subsubsection{Dane Wyjściowe}
+Dane wyjściowe to wyznaczony na podstawie trójki podstawowych kolorów kąt pod jakim należy ustawić serwo, które steruje rynną spustową do odpowiednich kontenerów.
+\subsection{Sposób (algorytm) na przetwarzanie wejść na wyjścia.}
+\subsubsection{Słownie}
+\begin{enumerate}
+
+\item Wyznaczenie natężenia R.
+\item Wyznaczenie natężenia G.
+\item Wyznaczenie natężenia B.
+\item Determinujemy kolor.
+\begin{enumerate}
+\item Np Jeśli $24 < R < 38$ oraz $30<G<44$ to ustaw kolor na yellow.
+\item Np Jeśli $19 < B < 22$ oraz $22<G<25$ to ustaw kolor na orange.
+\item Kombinacji można zaimplementować tyle ile szerokości kontenerów zmieści się na obwodzie wyznaczonym przez spód zsuwu (oś środek serwa).
+\end{enumerate}
+\item Na podstawie wyznaczonego koloru określamy kąt.
+\item Serwo ustawiamy pod wyznaczonym kątem.
+\end{enumerate}
+
+\subsubsection{Pseudokod}
+
+$loop()\{\\$
+$moveSerwo1Degrees(X)\\
+color = detectColor()\\
+decision = chooseContainer(color)\\
+moveSerwo2(decision)\\
+pushObject()\\
+moveSerwo1Degrees(-X)\\$
+$\}\\$
+
+$detectColor()\{\\$
+$//sprawdzamy czerwone\\
+digitalWrite(X, LOW);\\
+digitalWrite(X, LOW);\\
+R = pulseIn(sensor,LOW);\\
+//sprawdzamy zielone\\
+digitalWrite(X, LOW);\\
+digitalWrite(X, HIGH);\\
+G = pulseIn(sensor,LOW);\\
+//sprawdzamy niebieskie\\
+digitalWrite(X, HIGH);\\
+digitalWrite(X, HIGH);\\
+B = pulseIn(sensor,LOW);\\
+color = colorCombinations(R,G,B);\\
+return$ $ color;\\$
+$\}\\$
+
+$colorCombinations(R,G,B)\{\\$
+$if(R> 24 and R < 38 and G> 30 and G<44)\{\\
+color = 1$ $ // yellow \\
+\}\\
+if(B> 22 and B < 19 and G> 22 and G<25)\{\\
+color = 2 $ $// orange \\
+\}\\
+.\\
+.\\
+.\\
+return$  $color;\\$
+$\}\\$
+
+$chooseContainer(color)\{\\$
+$if(color == 1)\{\\
+serwo.write(X);\\
+\}\\
+if(color == 2)\{\\
+serwo.write(X);\\
+\}\\$
+.\\
+.\\
+.\\
+$\}\\$
+\end{document}

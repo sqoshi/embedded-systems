@@ -1,0 +1,175 @@
+\documentclass[12pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{array}
+\begin{document}
+\section{Schemat Komponentów}
+\subsection{Kolor sensor TCS3200}
+\begin{center}
+\begin{minipage}[H]{.45\textwidth}
+    \includegraphics[width=.8\linewidth]{tcs.png}
+\end{minipage}
+\end{center}
+\subsubsection{Opis}
+Sensor jest odpowiedzialny za odczyt( wykrycie) koloru obiektu.\\
+\\
+Umożliwia konwersje natężenia światła do częstotliwości RGB
+ ( Light    intensity -> frequency). Na jego wyjściu mamy częstotliwości dla danego koloru. Czujnik jest kompatybilny z Arduino. 
+\subsubsection{Specyfikacja}
+\begin{center}
+\begin{tabular}{ | m{5cm} | m{3cm} | } 
+\hline
+Napięcie &  2.7- 5.5V\\ 
+\hline
+\multicolumn{2}{|c|}{Bezpośrednio komunikuje się z Mikrokontrollerem}\\ 
+\hline
+\multicolumn{2}{|c|}{Konwersja światła o wysokiej rozdzielczości na częstotliwość}\\ 
+\hline
+\multicolumn{2}{|c|}{Funkcja wyłączania}\\ 
+\hline
+\multicolumn{2}{|c|}{Programowalny kolor i częstotliwość wyjściowa w pełnej skali}\\ 
+\hline
+\end{tabular}
+\end{center}
+Posiada cztery rodzaje filtrowania:\\
+\begin{minipage}[H]{.5\textwidth}
+    \includegraphics[width=1.8\linewidth]{filtry.png}
+\end{minipage}
+\subsection{Serwo micro servo SG90 Tower Pro}
+\begin{center}
+\begin{minipage}[H]{.85\textwidth}
+    \includegraphics[width=1.0\linewidth]{serwo.png}
+\end{minipage}
+\end{center}
+\subsubsection{Opis}
+W systemie wykorzystywane są dwa serwa: górne i dolne. Serwo górne ma dwa zadania do wykonania podawanie obiektu z wejścia pod sensor i zepchnięcie spod senora na zsuw. Natomiast serwo dolne ustawia zsuw pod odpowiednim kątem.
+\subsubsection{Specyfikacja}
+\begin{center}
+\begin{tabular}{ | m{5cm} | m{3cm} | } 
+\hline
+Napięcie &  4.8 V (~5V)\\ 
+\hline
+Moment przegięcia & 0.1 s/60º\\ 
+\hline
+Szybkość operowania & 1.8 kgf·cm\\ 
+\hline
+Szerokość strefy nieczułości & 10 µs \\ 
+\hline
+Zasięg temperatury &  0 ºC – 55 ºC  \\ 
+\hline
+Zasięg obrotu &  180º  \\ 
+\hline
+Waga &  9 g  \\ 
+\hline
+Wysokość & 27 mm\\
+\hline
+Szerokość & 22 mm\\
+\hline
+Głębokość & 11,5 mm\\
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Serwo micro servo SG90 Tower Pro}
+\begin{center}
+\begin{minipage}[H]{.85\textwidth}
+    \includegraphics[width=1.0\linewidth]{ard_front.png}
+\end{minipage}
+\begin{minipage}[H]{.85\textwidth}
+    \includegraphics[width=1.0\linewidth]{ard_back.png}
+\end{minipage}
+\end{center}
+\subsubsection{Opis}
+Głową systemu  jest płytka arduino UNO R3.  Odpowiada za kolekcjonowanie częstotliowści z sensora i sterowanie serwami.
+\subsubsection{Specyfikacja}
+\begin{center}
+\begin{tabular}{ | m{5cm} | m{3cm} | } 
+\hline
+Mikrokontroler&mikroczip ATmega328P\\
+\hline
+Napięcie wejściowe &  7-20 Volts\\ 
+\hline
+Napięcie operatywne &  5 Volts\\ 
+\hline
+\hline
+Flash Memory& 32 KB\\
+\hline
+Piny Cyfrowe I/O & 14\\  
+\hline
+Piny Analogowe & 6\\ 
+\hline
+DC Current na I/O Pin& 20 mA\\ 
+\hline
+DC Current dla 3.3V Pin:& 50 mA\\ 
+\hline
+SRAM& 2 KB\\ 
+\hline
+EEPROM& 1 KB\\ 
+\hline
+Wysokość &  68.6 mm  \\ 
+\hline
+Szerokość &  53.4 mm \\ 
+\hline
+Waga &  25 g  \\ 
+\hline
+\end{tabular}
+\end{center}
+\subsection{Zasilacz}
+\begin{center}
+\begin{minipage}[H]{.85\textwidth}
+    \includegraphics[width=1.0\linewidth]{zasilacz.png}
+\end{minipage}
+\end{center}
+\subsubsection{Opis}
+Dostarcza zasilanie dla całego systemu.
+\subsubsection{Specyfikacja}
+\begin{center}
+\begin{tabular}{ | m{5cm} | m{3cm} | } 
+\hline
+Napięcie wyjściowe &  12 V\\ 
+\hline
+Napięcie zasilania & max 240 V\\ 
+\hline
+Prąd wyjściowy& 2 A\\
+\hline 
+\multicolumn{2}{|c|}{Wtyk DC}\\
+\hline 
+\multicolumn{2}{|c|}{Impulsowy}\\
+\hline  
+\multicolumn{2}{|c|}{Wtyczkowy}\\ 
+\hline
+\end{tabular}
+\end{center}
+\subsection{Włącznik/ Wyłącznik}
+\begin{center}
+\begin{minipage}[H]{.85\textwidth}
+    \includegraphics[width=1.0\linewidth]{switcher.png}
+\end{minipage}
+\end{center}
+\subsubsection{Opis}
+Pozwala na regulowanie dopływu prądu tzn, włączanie urządzenia oraz wyłączanie.
+\subsubsection{Specyfikacja}
+\begin{center}
+\begin{tabular}{ | m{5cm} | m{3cm} | } 
+\hline
+Prąd& 6A \\
+\hline
+Napięcie& 230V\\
+\hline
+\end{tabular}
+\end{center}
+\section{Schemat Połączeń}
+\subsection{Schemat obwodu}
+\subsubsection{Obwód}
+\hspace{-2.75cm}%                
+    \includegraphics[scale=0.5]{circuit_better.png}
+Wszystkie linie( połączenia) to copper wires. 
+\newpage
+\subsubsection{Opis Obwodu}
+Gniazdo GND płytki Arduino Uno R3 jest połączone z gniazdem GND na sensorze TCS 3200. "Ziemia" (Power supply Ground) krzyżuje się z drugim wire również łączącym GND obu serw z OE(Enable for output frequency) sensora. Napięcie 5V poprowadzone jest zielonym wire'm do serwa górnego, dolnego oraz sensora TCS pod gniazdem VCC w każdym z komponentów. Gniazdo PWM  serwa górnego i dolnego podłączone jest do pinów cyfrowych 10 i 9 na płycie Arduino. Gniazdo OUT sensora, z którego zczytywana jest częstotliwość(frequency output) połączone jest w pinie 8 z płytką AUR3. Gniazda S2,S3(Photodiode type selection inputs) sensora, na które wysyłane są sygnały przez płytkę HIGH,LOW w celu określenia natężeń RGB( tabela 1.1.2) z pinami 6,5 płytki arduino. I ostatnie połączenia kablowe to S1,S0 wejścia selekcji, skalowania częstotliwości wyjściowej połączone z pinem 4, 5 w płytce Arduino.
+\subsection{Schemat Interakcji}
+Arduino przesyła do serwa żądanie z kątem przesunięcia. Serwo odbiera sygnał i przenosi obiekt pod sensor TCS. Arduino wysyła kolejno sygnały (High,High) ; (Low,High) ; (Low,Low)  przez wejścia S2,S3 do sensora TCS. Krócej: arduino pyta sensor TCS o kolor obiektu. TCS zwraca za każdym razem( OUT) częstotliowść zwrotną dla zadanej kombinacji. TCS zwraca odpowiedź na zapytanie o kolor do Arduino. Arduino wysyła do serwa dolnego kąt pod jakim ma się ustawić. Serwo ustawia zsuw pod odpowienim kątem z wiadomości od Arduino. Arduino wysyła sygnał do serwa górnego. Serwo góne przesuwa się zgodnie z rozkazem. Arduino ustawia serwo górne do stanu zerowego. Wszystko się zapętla aż do wyłączenia przyciskiem OFF.
+
+
+\end{document}

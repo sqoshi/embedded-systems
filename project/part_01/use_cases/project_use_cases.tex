@@ -31,16 +31,8 @@ System otrzymuje dane niezbędne do rozpoczęcia działania.
 \paragraph{Opis:}\mbox{} \\
 Operator wprowadza element na wejście urządzenia. Obiekt Wpada na serwo Nr 1.
 
-\subsubsection{Przekazanie obiektu do analizy}
-\paragraph{Przypadek Użycia:}\mbox{Nr 3}
-\paragraph{Priorytet:}\mbox{Wysoki}	
-\paragraph{Aktorzy:}\mbox{} \\
-System przenosi obiekt do miejsca, w którym zostanie on przeanalizowany.
-\paragraph{Opis:}\mbox{} \\
-System przekazuje przez serwo nr 1 dane z wejścia pod color sensor TCS3200, gdzie obiekt zostanie przebadany.
-
 \subsubsection{Analiza Obiektu}
-\paragraph{Przypadek Użycia:}\mbox{Nr 4}
+\paragraph{Przypadek Użycia:}\mbox{Nr 3}
 \paragraph{Priorytet:}\mbox{Wysoki}	
 \paragraph{Aktorzy:}\mbox{} \\
 System analizuje obiekt podany z wejścia. System otrzymuje informacje o obiekcie na podstawie, których może ustalić kolejne działania.
@@ -48,7 +40,7 @@ System analizuje obiekt podany z wejścia. System otrzymuje informacje o obiekci
 Obiekt znajduję się przy sensorze. Zostaje przebadany pod względem koloru. System zbiera informacje na temat częstotliwości RGB i określa kolor na podstawie zaimplementowanych zasad.
 
 \subsubsection{Ustawienie Zsuwu}
-\paragraph{Przypadek Użycia:}\mbox{Nr 5}
+\paragraph{Przypadek Użycia:}\mbox{Nr 4}
 \paragraph{Priorytet:}\mbox{Wysoki}	
 \paragraph{Aktorzy:}\mbox{} \\
 System na podstawie posiadanych informacji ustawa zsuw w odpowiednim kącie.
@@ -56,18 +48,26 @@ System na podstawie posiadanych informacji ustawa zsuw w odpowiednim kącie.
 System na podstawie zebranych informacji ustawia zsuw wykorzystując serwo nr 2. Pochylnia ustawiona jest pod takim kątem, aby wpaść do odpowiedniego kontenera.
 
 \subsubsection{Zwolnienie obiektu}
-\paragraph{Przypadek Użycia:}\mbox{Nr 6}
+\paragraph{Przypadek Użycia:}\mbox{Nr 5}
 \paragraph{Priorytet:}\mbox{Wysoki}	
 \paragraph{Aktorzy:}\mbox{} \\
 System przenosi obiekt do zsuwu. 
 Operator uzyskuje uporządkowany obiekt w oczekiwanym miejscu.
 \paragraph{Opis:}\mbox{} \\
 System przekazuje przez serwo nr 1 obiekt nad poprawnie ustawiony zsuw, przez  co zwalnia obiekt,a ten toczy się do odpowiedniego kontenera. Po czym serwo nr 1 wraca do początkowej pozycji, a system oczekuje na kolejny obiekt.
-\subsection{Inne Przypadki Użycia}
-$\bullet$ Ładowanie baterii, z której system czerpie zasilanie.\\
-\subsection{Ekstremalne Przypadki Użycia}
-$\bullet$ Modyfikacja urządzenia o nowe funkcjonalności np. kolejkowanie zbioru wejściowego.\\
 
+\subsection{Inne Przypadki Użycia}
+\paragraph{Aktorzy:}\mbox{} \\
+Użytkownik resetuje serwa do pozycji $zerowej$.
+\paragraph{Opis:}\mbox{} \\
+Użytkownik resetuje serwa do pozycji $zerowej$ przyciskiem reset z panelu.
+
+\subsection{Ekstremalne Przypadki Użycia}
+\paragraph{Priorytet:}\mbox{Niski}	
+\paragraph{Aktorzy:}\mbox{} \\
+Użytkownik dodaje nowy kontener.
+\paragraph{Opis:}\mbox{} \\
+Zostaje dodana specyfikacja częstotliowści i nowy kąt pod jakim ma ustawić się zsuw po rozpoznaniu.
 
 
 
