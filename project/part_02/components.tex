@@ -73,15 +73,15 @@ Głębokość & 11,5 mm\\
 
 \subsection{Serwo micro servo SG90 Tower Pro}
 \begin{center}
-\begin{minipage}[H]{.85\textwidth}
+\begin{minipage}[H]{.8\textwidth}
     \includegraphics[width=1.0\linewidth]{ard_front.png}
 \end{minipage}
-\begin{minipage}[H]{.85\textwidth}
+\begin{minipage}[H]{.8\textwidth}
     \includegraphics[width=1.0\linewidth]{ard_back.png}
 \end{minipage}
 \end{center}
 \subsubsection{Opis}
-Głową systemu  jest płytka arduino UNO R3.  Odpowiada za kolekcjonowanie częstotliowści z sensora i sterowanie serwami.
+Głową systemu  jest płytka arduino UNO R3.  Odpowiada za kolekcjonowanie częstotliowści z sensora i sterowanie serwami. Określa i przechowuje dane dotyczące kolorów i kątów kontenerów.
 \subsubsection{Specyfikacja}
 \begin{center}
 \begin{tabular}{ | m{5cm} | m{3cm} | } 
@@ -143,7 +143,7 @@ Prąd wyjściowy& 2 A\\
 \end{center}
 \subsection{Włącznik/ Wyłącznik}
 \begin{center}
-\begin{minipage}[H]{.85\textwidth}
+\begin{minipage}[H]{.65\textwidth}
     \includegraphics[width=1.0\linewidth]{switcher.png}
 \end{minipage}
 \end{center}
@@ -160,7 +160,7 @@ Napięcie& 230V\\
 \end{tabular}
 \end{center}
 \section{Schemat Połączeń}
-\subsection{Schemat obwodu}
+\subsection{Schemat w kontekście fizycznym}
 \subsubsection{Obwód}
 \hspace{-2.75cm}%                
     \includegraphics[scale=0.5]{circuit_better.png}
@@ -169,7 +169,19 @@ Wszystkie linie( połączenia) to copper wires.
 \subsubsection{Opis Obwodu}
 Gniazdo GND płytki Arduino Uno R3 jest połączone z gniazdem GND na sensorze TCS 3200. "Ziemia" (Power supply Ground) krzyżuje się z drugim wire również łączącym GND obu serw z OE(Enable for output frequency) sensora. Napięcie 5V poprowadzone jest zielonym wire'm do serwa górnego, dolnego oraz sensora TCS pod gniazdem VCC w każdym z komponentów. Gniazdo PWM  serwa górnego i dolnego podłączone jest do pinów cyfrowych 10 i 9 na płycie Arduino. Gniazdo OUT sensora, z którego zczytywana jest częstotliwość(frequency output) połączone jest w pinie 8 z płytką AUR3. Gniazda S2,S3(Photodiode type selection inputs) sensora, na które wysyłane są sygnały przez płytkę HIGH,LOW w celu określenia natężeń RGB( tabela 1.1.2) z pinami 6,5 płytki arduino. I ostatnie połączenia kablowe to S1,S0 wejścia selekcji, skalowania częstotliwości wyjściowej połączone z pinem 4, 5 w płytce Arduino.
 \subsection{Schemat Interakcji}
-Arduino przesyła do serwa żądanie z kątem przesunięcia. Serwo odbiera sygnał i przenosi obiekt pod sensor TCS. Arduino wysyła kolejno sygnały (High,High) ; (Low,High) ; (Low,Low)  przez wejścia S2,S3 do sensora TCS. Krócej: arduino pyta sensor TCS o kolor obiektu. TCS zwraca za każdym razem( OUT) częstotliowść zwrotną dla zadanej kombinacji. TCS zwraca odpowiedź na zapytanie o kolor do Arduino. Arduino wysyła do serwa dolnego kąt pod jakim ma się ustawić. Serwo ustawia zsuw pod odpowienim kątem z wiadomości od Arduino. Arduino wysyła sygnał do serwa górnego. Serwo góne przesuwa się zgodnie z rozkazem. Arduino ustawia serwo górne do stanu zerowego. Wszystko się zapętla aż do wyłączenia przyciskiem OFF.
+\subsubsection{Opis}
+\begin{enumerate}
+
+\item Arduino przesyła do serwa górnego żądanie z kątem przesunięcia. \item Serwo górne odbiera sygnał i przenosi obiekt pod sensor TCS.\item  Arduino wysyła kolejno sygnały (High,High) ; (Low,High) ; (Low,Low)  przez wejścia S2,S3 do sensora TCS. Krócej: arduino pyta sensor TCS o kolor obiektu. \item TCS zwraca( OUT) częstotliowść zwrotną dla zadanej kombinacji. TCS zwraca odpowiedź na zapytanie o kolor do Arduino.\item  Arduino wysyła do serwa dolnego kąt pod jakim ma się ustawić. \item Serwo dolne ustawia zsuw pod odpowienim kątem z wiadomości od Arduino. \item Arduino wysyła sygnał do serwa górnego. \item Serwo góne przesuwa się zgodnie z rozkazem. \item Arduino ustawia serwo górne do stanu zerowego.\item  Wszystko się zapętla aż do wyłączenia przyciskiem OFF.
+\end{enumerate}
+\subsubsection{Diagramy}
+\subsubsection{Diagram współpracy}
+\hspace{-2.75cm}%                
+    \includegraphics[scale=0.8]{wspol.png}
+\subsubsection{Diagram interakcji}
+\hspace{-2.75cm}%                
+    \includegraphics[scale=0.8]{inter.png}
+
 
 
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.4.26)  8 MAY 2020 00:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.4.26)  8 MAY 2020 13:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -163,12 +163,12 @@ Package pdftex.def Info: serwo.png  used on input line 42.
 File: ard_front.png Graphic file (type png)
 <use ard_front.png>
 Package pdftex.def Info: ard_front.png  used on input line 77.
-(pdftex.def)             Requested size: 331.50238pt x 211.50464pt.
+(pdftex.def)             Requested size: 312.00119pt x 199.06207pt.
 <ard_back.png, id=17, 263.98625pt x 193.72375pt>
 File: ard_back.png Graphic file (type png)
 <use ard_back.png>
 Package pdftex.def Info: ard_back.png  used on input line 80.
-(pdftex.def)             Requested size: 331.50238pt x 243.28326pt.
+(pdftex.def)             Requested size: 312.00119pt x 228.97334pt.
  [2 <./serwo.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 89--90
 []|\T1/cmr/m/n/12 mikroczip AT-
@@ -185,15 +185,14 @@ Package pdftex.def Info: zasilacz.png  used on input line 121.
 File: switcher.png Graphic file (type png)
 <use switcher.png>
 Package pdftex.def Info: switcher.png  used on input line 147.
-(pdftex.def)             Requested size: 331.50238pt x 242.74846pt.
+(pdftex.def)             Requested size: 253.49762pt x 185.62585pt.
 
 Overfull \hbox (26.8905pt too wide) in paragraph at lines 151--152
 \T1/cmr/m/n/12 Pozwala na reg-u-lowanie dopªywu pr¡du tzn, wª¡czanie urz¡dzenia
  oraz wyª¡czanie. 
  []
 
-[5 <./switcher.png>]
-<circuit_better.png, id=38, 1123.19624pt x 833.1125pt>
+<circuit_better.png, id=34, 1123.19624pt x 833.1125pt>
 File: circuit_better.png Graphic file (type png)
 <use circuit_better.png>
 Package pdftex.def Info: circuit_better.png  used on input line 166.
@@ -203,25 +202,52 @@ Overfull \hbox (93.35167pt too wide) in paragraph at lines 165--168
  []
  []
 
-[6] [7 <./circuit_better.png>] [8] (./components.aux) ) 
+[5 <./switcher.png>] [6 <./circuit_better.png>]
+Overfull \hbox (0.28752pt too wide) in paragraph at lines 175--175
+[]\T1/cmr/m/n/12 TCS zwraca( OUT) cz¦s-totliow±¢ zwrotn¡ dla zadanej kom-bi-nac
+ji. TCS
+ []
+
+<wspol.png, id=43, 601.24625pt x 494.84875pt>
+File: wspol.png Graphic file (type png)
+<use wspol.png>
+Package pdftex.def Info: wspol.png  used on input line 180.
+(pdftex.def)             Requested size: 480.99763pt x 395.87955pt.
+
+Overfull \hbox (12.75256pt too wide) in paragraph at lines 179--181
+ [] 
+ []
+
+[7]
+<inter.png, id=48, 609.27625pt x 443.6575pt>
+File: inter.png Graphic file (type png)
+<use inter.png>
+Package pdftex.def Info: inter.png  used on input line 183.
+(pdftex.def)             Requested size: 487.42165pt x 354.92647pt.
+
+Overfull \hbox (19.17657pt too wide) in paragraph at lines 182--184
+ [] 
+ []
+
+[8 <./wspol.png>] [9 <./inter.png>] (./components.aux) ) 
 Here is how much of TeX's memory you used:
- 2577 strings out of 483140
- 39874 string characters out of 5965151
+ 2589 strings out of 483140
+ 40020 string characters out of 5965151
  267741 words of memory out of 5000000
- 17613 multiletter control sequences out of 15000+600000
+ 17623 multiletter control sequences out of 15000+600000
  540039 words of font info for 40 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  41i,8n,42p,952b,248s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/piotr/.texlive20
-19/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk> </home/piotr/.texlive2
-019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/piotr/.texlive
-2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/piotr/.texliv
-e2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/piotr/.texli
-ve2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk>
-Output written on components.pdf (8 pages, 1172265 bytes).
+ </home/piotr/.texlive2
+019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk> </home/piotr/.texlive
+2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/piotr/.texliv
+e2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/piotr/.texli
+ve2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/piotr/.texl
+ive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk>
+Output written on components.pdf (9 pages, 1213151 bytes).
 PDF statistics:
- 235 PDF objects out of 1000 (max. 8388607)
- 41 compressed objects within 1 object stream
+ 248 PDF objects out of 1000 (max. 8388607)
+ 43 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
