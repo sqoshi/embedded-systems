@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.4.26)  10 MAY 2020 23:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.4.26)  10 MAY 2020 23:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**components.tex
-(./components.tex
+**connections.tex
+(./connections.tex
 LaTeX2e <2020-02-02> patch level 2
 L3 programming layer <2020-02-14>
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -83,8 +83,8 @@ File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
 \l__kernel_color_stack_int=\count177
 \l__pdf_internal_box=\box47
 )
-(./components.aux)
-\openout1 = `components.aux'.
+(./connections.aux)
+\openout1 = `connections.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
 LaTeX Font Info:    ... okay on input line 12.
@@ -133,92 +133,74 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-<tcs.png, id=9, 313.17pt x 311.1625pt>
-File: tcs.png Graphic file (type png)
-<use tcs.png>
-Package pdftex.def Info: tcs.png  used on input line 22.
-(pdftex.def)             Requested size: 140.39958pt x 139.5043pt.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 23.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 23.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 23.
+<circuit_better.png, id=9, 1123.19624pt x 833.1125pt>
+File: circuit_better.png Graphic file (type png)
+<use circuit_better.png>
+Package pdftex.def Info: circuit_better.png  used on input line 22.
+(pdftex.def)             Requested size: 561.59674pt x 416.55524pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 26--30
-
+Overfull \hbox (93.35167pt too wide) in paragraph at lines 21--24
+ []
  []
 
-<filtry.png, id=11, 828.09375pt x 272.01625pt>
-File: filtry.png Graphic file (type png)
-<use filtry.png>
-Package pdftex.def Info: filtry.png  used on input line 48.
-(pdftex.def)             Requested size: 351.0006pt x 115.3003pt.
-
-Overfull \hbox (156.0006pt too wide) in paragraph at lines 48--49
-[][] 
+[1 <./circuit_better.png>]
+Overfull \hbox (0.28752pt too wide) in paragraph at lines 31--31
+[]\T1/cmr/m/n/12 TCS zwraca( OUT) cz¦s-totliow±¢ zwrotn¡ dla zadanej kom-bi-nac
+ji. TCS
  []
 
-<serwo.png, id=12, 600.2425pt x 425.59pt>
-File: serwo.png Graphic file (type png)
-<use serwo.png>
-Package pdftex.def Info: serwo.png  used on input line 53.
-(pdftex.def)             Requested size: 331.50238pt x 235.0493pt.
-[1 <./tcs.png> <./filtry.png>]
-<ard_front.png, id=21, 280.04625pt x 178.6675pt>
-File: ard_front.png Graphic file (type png)
-<use ard_front.png>
-Package pdftex.def Info: ard_front.png  used on input line 88.
-(pdftex.def)             Requested size: 312.00119pt x 199.06207pt.
-<ard_back.png, id=22, 263.98625pt x 193.72375pt>
-File: ard_back.png Graphic file (type png)
-<use ard_back.png>
-Package pdftex.def Info: ard_back.png  used on input line 91.
-(pdftex.def)             Requested size: 312.00119pt x 228.97334pt.
- [2 <./serwo.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 100--101
-[]|\T1/cmr/m/n/12 mikroczip AT-
+<wspol.png, id=18, 601.24625pt x 494.84875pt>
+File: wspol.png Graphic file (type png)
+<use wspol.png>
+Package pdftex.def Info: wspol.png  used on input line 36.
+(pdftex.def)             Requested size: 480.99763pt x 395.87955pt.
+
+Overfull \hbox (41.20532pt too wide) in paragraph at lines 35--37
+ [] 
  []
 
-[3 <./ard_front.png> <./ard_back.png>]
-<zasilacz.png, id=33, 460.72125pt x 365.365pt>
-File: zasilacz.png Graphic file (type png)
-<use zasilacz.png>
-Package pdftex.def Info: zasilacz.png  used on input line 132.
-(pdftex.def)             Requested size: 331.50238pt x 262.88977pt.
- [4 <./zasilacz.png>]
-<switcher.png, id=38, 311.1625pt x 227.85126pt>
-File: switcher.png Graphic file (type png)
-<use switcher.png>
-Package pdftex.def Info: switcher.png  used on input line 158.
-(pdftex.def)             Requested size: 253.49762pt x 185.62585pt.
+[2]
+<inter.png, id=22, 609.27625pt x 443.6575pt>
+File: inter.png Graphic file (type png)
+<use inter.png>
+Package pdftex.def Info: inter.png  used on input line 39.
+(pdftex.def)             Requested size: 487.42165pt x 354.92647pt.
 
-Overfull \hbox (26.8905pt too wide) in paragraph at lines 162--163
-\T1/cmr/m/n/12 Pozwala na reg-u-lowanie dopªywu pr¡du tzn, wª¡czanie urz¡dzenia
- oraz wyª¡czanie. 
+Overfull \hbox (47.62933pt too wide) in paragraph at lines 38--40
+ [] 
  []
 
-[5 <./switcher.png>] [6] (./components.aux) ) 
+[3 <./wspol.png>]
+<protocol_ex.png, id=27, 651.43375pt x 452.69125pt>
+File: protocol_ex.png Graphic file (type png)
+<use protocol_ex.png>
+Package pdftex.def Info: protocol_ex.png  used on input line 43.
+(pdftex.def)             Requested size: 521.14769pt x 362.15349pt.
+
+Overfull \hbox (81.35538pt too wide) in paragraph at lines 42--44
+ [] 
+ []
+
+[4 <./inter.png>] [5 <./protocol_ex.png>] (./connections.aux) ) 
 Here is how much of TeX's memory you used:
- 2578 strings out of 483140
- 39852 string characters out of 5965151
- 268741 words of memory out of 5000000
- 17614 multiletter control sequences out of 15000+600000
- 541724 words of font info for 44 fonts, out of 8000000 for 9000
+ 2538 strings out of 483140
+ 39407 string characters out of 5965151
+ 267742 words of memory out of 5000000
+ 17584 multiletter control sequences out of 15000+600000
+ 538949 words of font info for 35 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 41i,8n,42p,257b,248s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/piotr/.texlive2019/texmf-v
-ar/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk> </home/piotr/.texlive2019/texmf-
-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/piotr/.texlive2019/texmf
--var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/piotr/.texlive2019/texm
-f-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk> </home/piotr/.texlive2019/tex
-mf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/piotr/.texlive2019/te
-xmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1440.600pk> </home/piotr/.texlive2019/t
-exmf-var/fonts/pk/ljfour/jknappen/ec/ecrm2074.600pk>
-Output written on components.pdf (7 pages, 1103079 bytes).
+ 41i,6n,42p,953b,183s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/piotr/.t
+exlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/piotr/.
+texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/piotr/
+.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk> </home/piotr
+/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/piot
+r/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1440.600pk> </home/pio
+tr/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm2074.600pk>
+Output written on connections.pdf (6 pages, 592864 bytes).
 PDF statistics:
- 260 PDF objects out of 1000 (max. 8388607)
- 47 compressed objects within 1 object stream
+ 240 PDF objects out of 1000 (max. 8388607)
+ 39 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
