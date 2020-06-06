@@ -1,0 +1,5 @@
+*.* linguist-language=C++
+*.log linguist-detectable=false
+*.gz linguist-detectable=false
+*.tex linguist-detectable=false
+*.aux linguist-detectable=false
